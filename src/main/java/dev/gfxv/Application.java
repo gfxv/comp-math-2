@@ -8,6 +8,7 @@ import dev.gfxv.methods.*;
 import dev.gfxv.samples.*;
 import dev.gfxv.utils.Asker;
 import dev.gfxv.utils.Parser;
+import dev.gfxv.utils.Plotter;
 import dev.gfxv.utils.Printer;
 
 import java.util.Arrays;
@@ -21,6 +22,7 @@ public class Application {
 
         Equation[] equations  = { new Equation1(), new Equation2(), new Equation3() };
         SystemOfEquations[] systemOfEquations = { new SOE1(), new SOE2() };
+
 
         try {
 
@@ -59,11 +61,14 @@ public class Application {
 
                 Solver solver = methods[methodIndex - 1];
 
-
                 System.out.printf("Solving:\n%s\nWith %s", equation, solver);
 
                 System.out.println();
                 System.out.println("Result: " + solver.solve());
+
+//                Plotter plotter = new Plotter(equation, boundaries);
+//                plotter.show();
+
                 return;
             }
 
@@ -78,6 +83,7 @@ public class Application {
 
             System.out.println();
             System.out.println("Result: " + Arrays.toString(solver.solve()));
+
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
