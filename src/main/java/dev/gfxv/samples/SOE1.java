@@ -26,7 +26,7 @@ public class SOE1 implements SystemOfEquations {
 
     @Override
     public String toString() {
-        return "x^2 + y^2 - 4 = 0\n-3x^2 + y = 0";
+        return "{ x^2 + y^2 - 4 = 0\n{ -3x^2 + y = 0";
     }
 
 }

@@ -14,6 +14,6 @@ public class Equation1 implements Equation {
 
     @Override
     public String toString() {
-        return "x^3 + 2x^2 - 4x - 12";
+        return "x^3 + 2x^2 - 4x - 12 = 0";
     }
 }

@@ -4,9 +4,7 @@ import dev.gfxv.entities.Boundaries;
 import dev.gfxv.exceptions.ConvergenceException;
 import dev.gfxv.exceptions.RootOutOfBoundaries;
 import dev.gfxv.samples.Equation;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
@@ -30,6 +28,7 @@ public class SimpleIteration implements Solver{
         double xNext = phi(x, lambda);
 
         while (Math.abs(xNext - x) > boundaries.getE()) {
+
             x = xNext;
             xNext = phi(x, lambda);
         }
@@ -49,4 +48,9 @@ public class SimpleIteration implements Solver{
         return 1 + l * equation.df(x);
     }
 
+
+    @Override
+    public String toString() {
+        return "Simple iteration method";
+    }
 }

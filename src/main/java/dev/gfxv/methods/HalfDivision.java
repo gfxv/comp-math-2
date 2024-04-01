@@ -3,9 +3,7 @@ package dev.gfxv.methods;
 import dev.gfxv.entities.Boundaries;
 import dev.gfxv.exceptions.RootOutOfBoundaries;
 import dev.gfxv.samples.Equation;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Data
@@ -15,6 +13,7 @@ public class HalfDivision  implements Solver {
 
     Equation equation;
     Boundaries boundaries;
+
 
 
     @Override
@@ -41,5 +40,10 @@ public class HalfDivision  implements Solver {
         throw new RootOutOfBoundaries(
                 String.format("Root is out of boundaries [%f, %f]", boundaries.getA(), boundaries.getB())
         );
+    }
+
+    @Override
+    public String toString() {
+        return "Half Division method";
     }
 }
